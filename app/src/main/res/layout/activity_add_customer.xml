@@ -75,7 +75,7 @@
 
 
             <EditText
-                android:id="@+id/maddress"
+                android:id="@+id/caddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
@@ -88,7 +88,7 @@
                 />
 
             <RadioGroup
-                android:id="@+id/mradiogroup"
+                android:id="@+id/cradiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
@@ -100,7 +100,7 @@
 
 
                 <RadioButton
-                    android:id="@+id/month1"
+                    android:id="@+id/cmonth1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -108,7 +108,7 @@
                     android:text="1 Month"/>
 
                 <RadioButton
-                    android:id="@+id/month3"
+                    android:id="@+id/cmonth3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -116,7 +116,7 @@
                     android:textSize="18dp"
                     android:text="3 Month"/>
                 <RadioButton
-                    android:id="@+id/month6"
+                    android:id="@+id/cmonth6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -124,7 +124,7 @@
                     android:text="6 Month"/>
 
                 <RadioButton
-                    android:id="@+id/year1"
+                    android:id="@+id/cyear1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -170,7 +170,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/msubmit"
+                android:id="@+id/csubmit"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginHorizontal="30dp"
