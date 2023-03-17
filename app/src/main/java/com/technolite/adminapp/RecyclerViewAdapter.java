@@ -56,6 +56,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 intent.putExtra("title", cardViewItem.getTitle());
                 intent.putExtra("imageUrl", cardViewItem.getImage());
                 activity.startActivity(intent);
+
+
             }
         });
 

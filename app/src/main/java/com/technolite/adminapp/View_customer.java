@@ -20,14 +20,6 @@ public class View_customer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_customer);
 
-        floatingActionButton = findViewById(R.id.floating_Btn);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent send = new Intent(View_customer.this, Add_customer.class);
-                startActivity(send);
-            }
-        });
 
         // Retrieve the title from the intent extras
         String titlev = getIntent().getStringExtra("title");
@@ -35,6 +27,22 @@ public class View_customer extends AppCompatActivity {
 
         // Set the title to the TextView
         title.setText(titlev);
+        floatingActionButton = findViewById(R.id.floating_Btn);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent send = new Intent(View_customer.this, Add_customer.class);
+
+
+                send.putExtra("title", titlev);
+
+
+                startActivity(send);
+            }
+        });
+
+
+
 
     }
 }
