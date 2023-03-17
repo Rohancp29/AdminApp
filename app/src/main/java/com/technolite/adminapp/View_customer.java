@@ -29,14 +29,12 @@ public class View_customer extends AppCompatActivity {
             }
         });
 
-
         // Retrieve the title from the intent extras
         String titlev = getIntent().getStringExtra("title");
         TextView title=findViewById(R.id.titlev);
 
         // Set the title to the TextView
         title.setText(titlev);
-
 
     }
 }

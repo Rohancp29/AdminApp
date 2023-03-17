@@ -146,10 +146,12 @@ public class MainActivity extends AppCompatActivity {
                 StorageReference imageRef = storageRef.child("images/" + UUID.randomUUID().toString() + ".jpg");
                 imageView.setDrawingCacheEnabled(true);
                 imageView.buildDrawingCache();
+
                 Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
                 byte[] data = baos.toByteArray();
+
                 UploadTask uploadTask = imageRef.putBytes(data);
                 uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override

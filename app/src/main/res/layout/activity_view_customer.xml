@@ -12,16 +12,15 @@
         android:layout_height="130dp"
         android:layout_centerHorizontal="true"
        >
-<TextView
-    android:id="@+id/titlev"
-    android:gravity="center"
-    android:textColor="@color/black"
-    android:hint="TJ"
-    android:layout_centerInParent="true"
-    android:layout_margin="20dp"
-    android:layout_width="150dp"
-    android:layout_height="30dp"/>
-
+    <TextView
+        android:id="@+id/titlev"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:hint="TJ"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:layout_width="150dp"
+        android:layout_height="30dp"/>
 
         <ImageView
             android:id="@+id/filter"
