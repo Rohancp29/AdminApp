@@ -29,6 +29,12 @@ public class Add_customer extends AppCompatActivity {
         custAddress = findViewById(R.id.caddress);
         custPayment = findViewById(R.id.cpayment);
 
+        // Retrieve the title from the intent extras
+        String title = getIntent().getStringExtra("title");
+
+        // Set the title of the activity
+        productName.setText(title);
+
 
 
 
