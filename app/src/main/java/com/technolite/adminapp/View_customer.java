@@ -3,22 +3,39 @@ package com.technolite.adminapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class View_customer extends AppCompatActivity {
-
+    Dialog mDialog;
     FloatingActionButton floatingActionButton;
+    ImageView filter;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_customer);
+
+        mDialog = new Dialog(this);
+        filter=findViewById(R.id.filter);
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddCardViewDialog();
+            }
+        });
+
+
 
 
         // Retrieve the title from the intent extras
@@ -40,5 +57,14 @@ public class View_customer extends AppCompatActivity {
 
 
 
+    }
+
+    private void showAddCardViewDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select any one");
+
+        View view = getLayoutInflater().inflate(R.layout.activity_filter_popup, null);
+        builder.setView(view);
+        builder.show();
     }
 }

@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
     private void showAddCardViewDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
