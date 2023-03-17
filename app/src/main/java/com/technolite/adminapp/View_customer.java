@@ -5,15 +5,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.ByteArrayOutputStream;
+import java.util.UUID;
 
 public class View_customer extends AppCompatActivity {
     Dialog mDialog;
@@ -35,9 +47,6 @@ public class View_customer extends AppCompatActivity {
             }
         });
 
-
-
-
         // Retrieve the title from the intent extras
         String titlev = getIntent().getStringExtra("title");
         TextView title=findViewById(R.id.titlev);
@@ -53,18 +62,20 @@ public class View_customer extends AppCompatActivity {
                 startActivity(send);
             }
         });
-
-
-
-
     }
 
     private void showAddCardViewDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Select any one");
-
         View view = getLayoutInflater().inflate(R.layout.activity_filter_popup, null);
         builder.setView(view);
+
+        builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
         builder.show();
     }
 }

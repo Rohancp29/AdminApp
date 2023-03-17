@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferencesHelper sharedPreferencesHelper;
     private String lastCardTitle = "";
 
-
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference rootRef = database.getReference().child("Product Details");
 
@@ -179,7 +178,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         builder.setNegativeButton("Cancel", null);
-
         builder.show();
     }
     @Override
