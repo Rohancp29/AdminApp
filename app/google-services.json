@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "299609317882",
+    "project_id": "admin-app-668be",
+    "storage_bucket": "admin-app-668be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299609317882:android:d472c55b49ab7ff748c443",
+        "android_client_info": {
+          "package_name": "com.technolite.adminapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299609317882-0hnb1i7fk5f8h4f8nlhrdpjgk7m8plf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZyg23ZmL6d_kJUgw2In4NqOvjTBgFAmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299609317882-0hnb1i7fk5f8h4f8nlhrdpjgk7m8plf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

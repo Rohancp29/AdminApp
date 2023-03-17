@@ -9,9 +9,18 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:layout_centerHorizontal="true"
        >
+<TextView
+    android:id="@+id/titlev"
+    android:gravity="center"
+    android:textColor="@color/black"
+    android:hint="TJ"
+    android:layout_centerInParent="true"
+    android:layout_margin="20dp"
+    android:layout_width="150dp"
+    android:layout_height="30dp"/>
 
 
         <ImageView
@@ -30,7 +39,7 @@
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="75dp"
             android:hint="Search"
             android:padding="10dp" />
 
@@ -41,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="2dp" />
 
 </RelativeLayout>
