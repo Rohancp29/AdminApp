@@ -155,30 +155,28 @@
                 android:textColor="@color/black"
                 />
 
-
-
-
-
-
-            <TextView
-                android:id="@+id/cjoindate"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/date_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="30dp"
-                android:padding="15dp"
-                android:hint="Join Date"
-                android:textSize="18sp"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:elevation="10dp"
-                android:inputType="date" />
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:elevation="5dp"
+                android:hint="Select Date"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/dropdown_logo">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cjoindate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    />
 
+            </com.google.android.material.textfield.TextInputLayout>
 
-
-
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/csubmit"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -186,8 +184,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_gravity="center"
                 android:layout_marginVertical="20dp"
-                android:background="#51E357"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:text="Submit" />
         </LinearLayout>

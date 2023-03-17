@@ -32,11 +32,7 @@ public class View_customer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent send = new Intent(View_customer.this, Add_customer.class);
-
-
                 send.putExtra("title", titlev);
-
-
                 startActivity(send);
             }
         });
