@@ -69,11 +69,9 @@ public class View_customer extends AppCompatActivity {
         builder.setTitle("Select any one");
         View view = getLayoutInflater().inflate(R.layout.activity_filter_popup, null);
         builder.setView(view);
-
         builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
             }
         });
         builder.show();
