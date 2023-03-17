@@ -38,11 +38,12 @@
                 android:layout_gravity="center"
                 android:gravity="center">
             </TextView>
+
             <TextView
                 android:id="@+id/product_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="abc"
+                android:hint="abc"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold"
