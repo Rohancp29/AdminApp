@@ -86,7 +86,7 @@ public class Add_customer extends AppCompatActivity {
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
                                 // on below line we are setting date to our text view.
-                                cjoindate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                                cjoindate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
                             }
                         },
