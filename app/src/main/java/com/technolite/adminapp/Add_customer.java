@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -59,6 +60,9 @@ public class Add_customer extends AppCompatActivity {
         cpayment = findViewById(R.id.cpayment);
         cjoindate = findViewById(R.id.cjoindate);
         submit = findViewById(R.id.csubmit);
+        RadioGroup durationRadioGroup = findViewById(R.id.cradiogroup);
+
+//        String duration = durationRadioButton.getText().toString();
 
         cjoindate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +112,7 @@ public class Add_customer extends AppCompatActivity {
         user.put("Address", csAddress);
         user.put("Payment", csPayment);
         user.put("Join Date", csJoinDate);
+        //user.put("Duration",duration);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,11 +139,15 @@ public class Add_customer extends AppCompatActivity {
                     reference.addChildEventListener(new ChildEventListener() {
                         @Override
                         public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                            RadioButton durationRadioButton = findViewById(durationRadioGroup.getCheckedRadioButtonId());
                             reference.child(title).child("Customer"+title).child(cname.getText().toString()).child("Name").setValue(cname.getText().toString());
                             reference.child(title).child("Customer"+title).child(cname.getText().toString()).child("Mobile").setValue(cmob.getText().toString());
                             reference.child(title).child("Customer"+title).child(cname.getText().toString()).child("Address").setValue(caddress.getText().toString());
                             reference.child(title).child("Customer"+title).child(cname.getText().toString()).child("Payment").setValue(cpayment.getText().toString());
                             reference.child(title).child("Customer"+title).child(cname.getText().toString()).child("Join Date").setValue(cjoindate.getText().toString());
+                            reference.child(title).child("Customer"+title).child(cname.getText().toString()).child("Duration").setValue(durationRadioButton.getText().toString());
+
                         }
 
                         @Override
@@ -162,7 +171,7 @@ public class Add_customer extends AppCompatActivity {
                         }
                     });
                 }
-                startActivity(new Intent(getApplicationContext(),View_customer.class));
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 finish();
             }
         });
