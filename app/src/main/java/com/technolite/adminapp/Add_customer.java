@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -161,6 +162,8 @@ public class Add_customer extends AppCompatActivity {
                         }
                     });
                 }
+                startActivity(new Intent(getApplicationContext(),View_customer.class));
+                finish();
             }
         });
     }
