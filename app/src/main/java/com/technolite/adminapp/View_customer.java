@@ -19,9 +19,11 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -75,13 +77,18 @@ public class View_customer extends AppCompatActivity {
 
 
 
-        String months[] = {"","Active", "Expering Soon", "Expired"};
+        String months[] = {"","Active", "Expiring Soon", "Expired"};
         List<String> monthList = new ArrayList<>(Arrays.asList(months));
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_item_layout, monthList);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item_layout);
+        ArrayAdapter<String> sadapter = new ArrayAdapter<>(this, R.layout.spinner_item_layout, monthList);
+        sadapter.setDropDownViewResource(R.layout.spinner_dropdown_item_layout);
 
 
-        //filter=findViewById(R.id.filter);
+        Spinner status=findViewById(R.id.status);
+        status.setAdapter(sadapter);
+
+
+
+        filter=findViewById(R.id.filter);
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,10 +122,9 @@ public class View_customer extends AppCompatActivity {
                     String member_number = memberSnapshot.child("Mobile").getValue(String.class);
                     String member_fee = memberSnapshot.child("Payment").getValue(String.class);
                     String Duration = memberSnapshot.child("Duration").getValue(String.class);
-
                     String join_date = memberSnapshot.child("Join Date").getValue(String.class);
 
-                    Log.d("TAG", "Name: " + member_name + ", Mobile: " + member_number + ", Address: " + member_addrs + ", Payment: " + member_fee + ", Join Date: " + join_date + ", Duration: " + Duration);
+                   // Log.d("TAG", "Name: " + member_name + ", Mobile: " + member_number + ", Address: " + member_addrs + ", Payment: " + member_fee + ", Join Date: " + join_date + ", Duration: " + Duration);
 
 
 // Calculate reminder status based on join date and duration
@@ -134,9 +140,11 @@ public class View_customer extends AppCompatActivity {
                         int duration_in_months = 0;
                         if (Duration.equals("1 Month")) {
                             duration_in_months = 1;
-                        }  else if (Duration.equals("3 Months")) {
+                        } else if (Duration.equals("2 Month")) {
+                            duration_in_months = 2;
+                        } else if (Duration.equals("3 Month")) {
                             duration_in_months = 3;
-                        } else if (Duration.equals("6 Months")) {
+                        } else if (Duration.equals("6 Month")) {
                             duration_in_months = 6;
                         } else if (Duration.equals("1 Year")) {
                             duration_in_months = 12;
@@ -160,9 +168,8 @@ public class View_customer extends AppCompatActivity {
                             reminder_status = "Active";
                         }
 
-
                         // Do something with the data
-                        memberList.add(0, new Member( member_name, member_addrs, member_number, member_fee, Duration, join_date, reminder_status));
+                        memberList.add(0, new Member( member_name, member_addrs, member_number, member_fee, Duration, join_date, reminder_status,expiry_date.toString()));
                         adapter.notifyItemInserted(0);
 
 
@@ -217,6 +224,38 @@ public class View_customer extends AppCompatActivity {
             }
         });
 
+
+        status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String Sstatus=adapterView.getItemAtPosition(i).toString();
+
+
+                List<Member> filterlist=new ArrayList<>();
+                for(Member member:memberList){
+
+                    if(member.getReminder_status().toLowerCase().contains(Sstatus.toLowerCase().trim())) {
+                        filterlist.add(member);
+                    }
+
+                }
+                if(filterlist.isEmpty()) {
+                    recyclerView.setAdapter(adapter);
+                }
+                else{
+                    recyclerView.setAdapter(new MemberAdapter(filterlist, View_customer.this));
+
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 
 

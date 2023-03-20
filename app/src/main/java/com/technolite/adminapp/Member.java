@@ -11,6 +11,7 @@ public class Member {
     private String join_date;
     private String member_image;
     private String member_remaining_fee;
+    private String expiry_date;
     private  String reminder_status;
 
     public String getMember_name() {
@@ -101,15 +102,24 @@ public class Member {
         this.reminder_status = reminder_status;
     }
 
-    public Member( String member_name, String member_addrs, String member_number, String member_fee, String Duration,  String join_date,  String reminder_status) {
+    public String getExpiry_date() {
+        return expiry_date;
+    }
+
+    public void setExpiry_date(String expiry_date) {
+        this.expiry_date = expiry_date;
+    }
+
+    public Member(String member_name, String member_addrs, String member_number, String member_fee, String Duration, String join_date, String reminder_status, String expiry_date) {
 
         this.member_name = member_name;
         this.member_addrs = member_addrs;
         this.member_number = member_number;
         this.member_fee = member_fee;
         this.Duration = Duration;
-
+        this.expiry_date=expiry_date;
         this.join_date = join_date;
+
 
         this.reminder_status=reminder_status;
     }

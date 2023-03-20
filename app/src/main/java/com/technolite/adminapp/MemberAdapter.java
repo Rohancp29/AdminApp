@@ -52,6 +52,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MemberView
         holder.numberTV.setText(member.getMember_number());
         holder.addrsTV.setText(member.getMember_addrs());
         holder.remainderTV.setText(member.getReminder_status());
+        //holder.expiry.setText(member.getExpiry_date());
 
 
     }
@@ -66,7 +67,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MemberView
     }
 
     public class MemberViewHolder extends RecyclerView.ViewHolder{
-        TextView nameTV,addrsTV,numberTV,dateTV,remainderTV;
+        TextView nameTV,addrsTV,numberTV,dateTV,remainderTV,expiry;
 
         public MemberViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -75,6 +76,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MemberView
             numberTV=itemView.findViewById(R.id.idTVCUPhoneNumber);
             remainderTV=itemView.findViewById(R.id.idcalender);
             dateTV=itemView.findViewById(R.id.iddate);
+
 
         }
     }
