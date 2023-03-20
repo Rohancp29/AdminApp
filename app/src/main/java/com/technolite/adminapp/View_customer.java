@@ -19,6 +19,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ import java.io.ByteArrayOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -70,7 +72,16 @@ public class View_customer extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         mDialog = new Dialog(this);
-        filter=findViewById(R.id.filter);
+
+
+
+        String months[] = {"","Active", "Expering Soon", "Expired"};
+        List<String> monthList = new ArrayList<>(Arrays.asList(months));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_item_layout, monthList);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item_layout);
+
+
+        //filter=findViewById(R.id.filter);
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
